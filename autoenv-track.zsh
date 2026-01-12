@@ -9,9 +9,9 @@ autoenv-track-pre() {
   typeset -g _AUTOENV_TRACK_EXPORTS_PRE=(${(k)parameters[(R)*export*]})
   
   if [[ -n "$AUTOENV_TRACK_DEBUG" ]]; then
-    print -P "%F{cyan}pre-aliases:%f ${(k)_AUTOENV_TRACK_ALIASES_PRE}"
-    print -P "%F{cyan}pre-functions:%f ${(k)_AUTOENV_TRACK_FUNCTIONS_PRE}"
-    print -P "%F{cyan}pre-exports:%f ${(k)_AUTOENV_TRACK_EXPORTS_PRE}"
+    print -P "%F{cyan}pre-aliases:%f ${#_AUTOENV_TRACK_ALIASES_PRE}"
+    print -P "%F{cyan}pre-functions:%f ${#_AUTOENV_TRACK_FUNCTIONS_PRE}"
+    print -P "%F{cyan}pre-exports:%f ${#_AUTOENV_TRACK_EXPORTS_PRE}"
   fi
 }
 
@@ -28,9 +28,9 @@ autoenv-track-post() {
   local post_functions=(${(k)functions})
   local post_exports=(${(k)parameters[(R)*export*]})
   if [[ -n "$AUTOENV_TRACK_DEBUG" ]]; then
-    print -P "%F{cyan}post-aliases:%f ${post_aliases[@]}"
-    print -P "%F{cyan}post-functions:%f ${post_functions[@]}"
-    print -P "%F{cyan}post-exports:%f ${post_exports[@]}"
+    print -P "%F{cyan}post-aliases:%f ${#post_aliases}"
+    print -P "%F{cyan}post-functions:%f ${#post_functions}"
+    print -P "%F{cyan}post-exports:%f ${#post_exports}"
   fi
   
   typeset -g _AUTOENV_TRACK_ALIASES=(${post_aliases:|_AUTOENV_TRACK_ALIASES_PRE})

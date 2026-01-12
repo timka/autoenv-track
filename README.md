@@ -10,7 +10,7 @@ After installing with your zsh plugin manager of choice add `autoenv-track-{pre,
 ```bash
 # .autoenv.zsh
 
-# Uncomment the next line for verbose (!) debugging
+# Uncomment the next line for debugging output
 # export AUTOENV_TRACK_DEBUG=true
 
 autoenv-track-pre
